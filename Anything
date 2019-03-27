@@ -1,0 +1,66 @@
+Feature: Job World Application
+
+Scenario: opening the RegistrationForm 
+	Given User open the Registration page 
+	Then Title must be as "Welcome to Jobs World" 
+	
+Scenario: Unsuccessful Registration 
+	Given User open the RegistrationForm 
+	When User Enter Wrong credential User Id as " "  
+	Then a alert is generated with message as "Invalid RegistrationForm! Please try again!" 
+	
+Scenario: Unsuccessful Registration 
+	Given User open the RegistrationForm 
+	When User Enter Wrong credential User Id of invalid length  
+	Then a alert is generated with message as "Invalid RegistrationForm! Please try again!" 
+
+Scenario: Unsuccessful RegistrationForm, when password field is blank 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential Password as "" 
+	Then a error is generated with message as "* Please enter password." 
+	
+Scenario: Unsuccessful RegistrationForm, when password field is invalid
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential Password of invalid length 
+	Then a error is generated with message as "* Please enter password." 
+	
+Scenario: Unsuccessful RegistrationForm, when username field is blank 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential User Name as ""
+	Then a error is generated with message as "* Please enter userName." 
+	
+Scenario: Unsuccessful RegistrationForm, when username field is invalid 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential User Name of invalid
+	Then a error is generated with message as "* Please enter userName." 	
+	
+		
+Scenario: Unsuccessful RegistrationForm, when Address field is invalid 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential Address of invalid
+	Then a error is generated with message as "* Please enter correct Address." 
+	
+Scenario: Unsuccessful RegistrationForm, when Country field is invalid 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential of Country field
+	Then a error is generated with message as "* Please Select country field."
+
+Scenario: Unsuccessful RegistrationForm, when Zip code field is invalid 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential of Zip Code
+	Then a error is generated with message as "* Please Enter correct Zip Code"
+
+Scenario: Unsuccessful RegistrationForm, when email field is invalid 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential of Zip Code
+	Then a error is generated with message as "* Please Enter correct Zip Code"
+
+Scenario: Unsuccessful RegistrationForm, when Sex field is invalid 
+	Given User open the RegistrationForm page 
+	When User Enter Wrong credential of Sex field
+	Then a error is generated with message as "* Please Enter correct Zip Code"
+
+Scenario: Successful RegistrationForm
+	Given User open the RegistrationForm page 
+	When User Enter  All Valid credential 
+	Then Click the Submit Button 
